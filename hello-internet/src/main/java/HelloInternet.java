@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public class HelloInternet {
     public static void main(String[] args) {
-        var port = Optional.ofNullable(System.getenv("PORT")).map(Integer::parseInt).orElse(7000);
+        final var port = Optional.ofNullable(System.getenv("PORT")).map(Integer::parseInt).orElse(7000);
         final var app = Javalin.create().start(port);
         app.get("/", (final var ctx) -> {
             if (canUseNewHttpClient()) {
