@@ -23,3 +23,6 @@ configure<JavaPluginConvention> {
 application {
     mainClassName = "HelloInternet"
 }
+
+val distZip = tasks.getByName<Zip>("distZip")
+distZip.archiveName = "${distZip.baseName}.${distZip.extension}"

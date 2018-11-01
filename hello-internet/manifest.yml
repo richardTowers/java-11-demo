@@ -1,0 +1,5 @@
+---
+applications:
+- name: hello-java-11
+  path: build/distributions/hellointernet.zip
+

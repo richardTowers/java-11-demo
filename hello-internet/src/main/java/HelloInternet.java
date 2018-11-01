@@ -5,10 +5,12 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Optional;
 
 public class HelloInternet {
     public static void main(String[] args) {
-        final var app = Javalin.create().start(7000);
+        var port = Optional.ofNullable(System.getenv("PORT")).map(Integer::parseInt).orElse(7000);
+        final var app = Javalin.create().start(port);
         app.get("/", (final var ctx) -> {
             if (canUseNewHttpClient()) {
                 ctx.result("Hello from the fancy new world of java 11");
