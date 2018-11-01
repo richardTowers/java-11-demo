@@ -2,4 +2,5 @@
 applications:
 - name: hello-java-11
   path: build/distributions/hellointernet.zip
-
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
